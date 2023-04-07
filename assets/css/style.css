@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+header {
+  display: inline;
+}
+
+.highscores {
+  float: left;
+}
+
+.timer {
+  float: right;
+}
