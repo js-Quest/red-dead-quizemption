@@ -4,16 +4,62 @@
   font-family: Geneva, Tahoma, sans-serif;
   line-height: 1.5;
   box-sizing: border-box;
+  background-color: darkolivegreen;
 }
 
-header {
-  display: inline;
+h1 {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 2px;
+  background-color: burlywood;
+}
+
+.pushable {
+  background: rgb(12, 65, 12);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+.front {
+  display: block;
+  padding: 2px 30px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: burlywood;
+  color: rgb(91, 62, 62);
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
 }
 
 .highscores {
   float: left;
+  margin: 2% 0 0 3%;
 }
 
 .timer {
   float: right;
+  margin: 2% 3% 0 0;
 }
+
+.main-card{
+  height: 80%;
+  width: 55%;
+  margin: auto;
+  padding-top: 10%;
+}
+
+.card-content {
+  padding: 3% 0 5% 0;
+}
+
