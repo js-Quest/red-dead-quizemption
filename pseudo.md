@@ -13,14 +13,17 @@ header with "view scores"
 -button to clear scores
 
 
-intro page for quiz
+<!-- !intro page for quiz
 -title
 -greeting
 -start button function
 -make page go away after button click
---see lesson with carousel pics
+--see lesson with carousel pics -->
 
 questions pages for quiz
+questions in array
+answers in sub-array
+
 -takes over intro page spot
 -question box
 -choices box
@@ -29,6 +32,7 @@ questions pages for quiz
 - " " if wrong answer ""
   -subtract time from timer if wrong
 -make page go away at set time after answer is input, auto cycle to next question, repeat.
+-iterate over questions array??? eeeee...
 
 
 ending page

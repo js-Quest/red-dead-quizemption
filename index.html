@@ -12,9 +12,10 @@
 
 
 <body>
-
-  <div class="highscores" href="highscore.html">High Scores</div>
-  <div class="timer">Timer</div>
+  <nav>
+    <div class="highscores" href="highscore.html">High Scores</div>
+    <div class="timer">Timer</div>
+  </nav>
 
   <section class="card">
     <article id="start-page">
@@ -23,8 +24,9 @@
       <button id="startbtn" class="pushable"><span class=front>Shoot!</span></button>
     </article>
 
-    <article id="questions">
-      <h2></h2>
+    <article id="question-page" class="hidden">
+      <h2 id="n-question"></h2>
+      <p class="answers"></p>
     </article>
 
 
