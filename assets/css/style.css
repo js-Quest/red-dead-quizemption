@@ -52,7 +52,7 @@ button {
   margin: 2% 3% 0 0;
 }
 
-.main-card{
+.card{
   height: 80%;
   width: 55%;
   margin: auto;
@@ -62,4 +62,9 @@ button {
 .card-content {
   padding: 3% 0 5% 0;
 }
+
+.hidden {
+  display: none;
+}
+
 

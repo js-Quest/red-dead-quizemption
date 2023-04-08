@@ -1,7 +1,7 @@
 
 need html skeleton
 
-need minimal css to position boxes, can alter later
+<!-- !need minimal css to position boxes, can alter later -->
 
 header with countdown timer
 
