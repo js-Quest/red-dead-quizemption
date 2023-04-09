@@ -26,6 +26,10 @@ View the High Scores page.
 
 Return to the start.
 
+
+https://user-images.githubusercontent.com/128349503/230791299-a3638739-a463-4242-8db4-42c868997dfb.mp4
+
+
 You can open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows) to check out the console, storage, and coding.  Feel free to change it up and test out different code!
 
 
