@@ -13,7 +13,6 @@ h1 {
 
 button {
   text-align: center;
-  border: 2px solid black;
   border-radius: 7px;
   padding: 2px;
   background-color: burlywood;
@@ -24,7 +23,7 @@ button {
   border-radius: 12px;
   border: none;
   padding: 0;
-  cursor: pointer;
+  cursor: crosshair;
   outline-offset: 4px;
 }
 
