@@ -2,7 +2,6 @@ console.log("ding");
 
 
 var highscoresEl = document.querySelector("highscores");
-var timerEl = document.querySelector("timer");
 var timeID = document.getElementById("time")
 var startBtnEl = document.getElementById("startbtn");
 var askEl = document.getElementById("ask-question");
@@ -98,14 +97,14 @@ function getQuestion() {
 // time penalty for wrong answer
 function chooseAnswer() {
   if (this.value !== questions[questionIndex].correct) {
-    time -=10;
+    time -=13;
 
-    if (time < 0) {time=0}
+    if (time <= 1) {time=0};
     timeID.textContent = time;
-    resultEl.textContent = "Nope"
+    resultEl.textContent = "Nope";
 
   } else {
-    resultEl.textContent = "Right on!"
+    resultEl.textContent = "Right on!";
   }
 
   resultEl.setAttribute("class", "result");
@@ -125,7 +124,7 @@ function chooseAnswer() {
 }
 
 function endQuiz () {
-  clearInterval(timeID);
+  clearInterval(timer);
 
   // make end page appear
   var endPageEl = document.getElementById("end-page");
@@ -133,6 +132,11 @@ function endQuiz () {
 
   // make questions go away
   questionsPageEl.setAttribute("class", "hidden");
+
+  // show final score
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+  
 }
 
 // function for timer countdown
@@ -156,7 +160,7 @@ submitBtnEl.onclick = function saveScore() {
 
   // get info from input box
   var initials = initialsEl.value.trim()
-
+  
   if (initials !== "") {
     // get saved scores.  if none, set up array.
     var highscores =
@@ -168,7 +172,7 @@ submitBtnEl.onclick = function saveScore() {
       initials: initials
     };
 
-    // save to local storage
+    // save object to local storage
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
 

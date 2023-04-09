@@ -20,7 +20,7 @@ header with "view scores"
 -make page go away after button click
 --see lesson with carousel pics -->
 
-questions pages for quiz
+<!-- !questions pages for quiz -->
 questions in array
 answers in sub-array
 
