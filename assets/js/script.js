@@ -143,8 +143,10 @@ function timeRunDown () {
 
 
 
-// var restartBtn = document.getElementById("restart");
-// restartBtn.onclick = start();
+var restartBtn = document.getElementById("restart");
+restartBtn.onclick = function restart () {
+  window.location.reload();
+}
 
 
 submitBtnEl.onclick = function saveScore() {
