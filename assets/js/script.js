@@ -3,9 +3,15 @@ console.log("ding");
 
 var highscoresEl = document.querySelector("highscores");
 var timerEl = document.querySelector("timer");
+var timeID = document.getElementById("time")
 var startBtnEl = document.getElementById("startbtn");
 var askEl = document.getElementById("ask-question");
 var answersEl = document.getElementById("answers");
+var resultEl = document.getElementById("result");
+var questionsPageEl = document.getElementById("question-page");
+
+var questionIndex = 0;
+var time = allQuestions.length * 12;
 
 
 // hide start screen when startbtn ("shoot!" button) clicked
@@ -16,18 +22,22 @@ startBtnEl.onclick = function start() {
   startPageEl.setAttribute("class", "hidden");
 
   // make question page appear
-  var questionsPageEl = document.getElementById("question-page");
   questionsPageEl.removeAttribute("class", "hidden");
+
+  timerID = setInterval(timeRunDown, 1000)
+  timerEl.textContent = time;
+
+
 
   getQuestion();
 }
 
-var questionIndex = 0;
 
 
 
 function getQuestion() {
-  
+  // clear old stuff
+  // answersEl.textContent = "";
   
   // fetch question from question array
   var currentQuestion = allQuestions[questionIndex];
@@ -46,14 +56,52 @@ function getQuestion() {
   });
 
   //clear old stuff
-  // answersEl.textContent = "";
   // askEl.textContent = "";
 }
 
 function chooseAnswer() {
   if (this.value !== allQuestions[questionIndex].correct) {
-    // time -=10;
+    time -=10;
+
+    if (time < 0) {time=0}
+    timerEl.textContent = time;
+    resultEl.textContent = "Nope"
+
+  } else {
+    resultEl.textContent = "Right on!"
   }
+
+  resultEl.setAttribute("class", "result");
+  setTimeout(function() {
+    resultEl.setAttribute("class", "hidden")
+  }, 1000);
 }
+
+// move on
+questionIndex++;
+
+// check for final question
+if (questionIndex === allQuestions.length) {
+  endQuiz();
+} else {
+  getQuestion();
+}
+
+function endQuiz () {
+  clearInterval(timerID);
+
+  // make end page appear
+  var endPageEl = document.getElementById("end-page");
+  endPageEl.removeAttribute("class", "hidden");
+
+  // make questions go away
+  questionsPageEl.setAttribute("class", "hidden");
+}
+
+function timeRunDown () {
+  
+}
+
+
 
 

@@ -66,4 +66,10 @@ button {
   display: none;
 }
 
-
+.feedback {
+  font-size: 1.4rem;
+  margin-top: 4%;
+  padding-top: 2%;
+  color: black;
+  border-top: 2px solid;
+}

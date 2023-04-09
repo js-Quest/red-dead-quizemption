@@ -14,7 +14,7 @@
 <body>
   <nav>
     <div class="highscores" href="highscore.html">High Scores</div>
-    <div class="timer">Timer</div>
+    <div class="timer">Time: <span id="time">0</span></div>
   </nav>
 
   <section class="card">
@@ -29,14 +29,17 @@
       <p id="answers"></p>
     </article>
 
+    <article id="end-page" class="hidden">
+      <h2></h2>
+      <p></p>
+    </article>
 
 
-    <section></section>
+
+    <div id="result" class="hidden"></div>
   </section>
 
-
-
-
+  
   <script src="assets/js/script.js"></script>
   <script src="assets/js/questions.js"></script>
 </body>
