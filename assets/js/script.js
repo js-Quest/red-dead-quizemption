@@ -11,7 +11,39 @@ var resultEl = document.getElementById("result");
 var questionsPageEl = document.getElementById("question-page");
 
 var questionIndex = 0;
+
+var questions = [
+  {
+    ask: "What is the name of the main protagonist that you start playing as?",
+    answers: ["John", "Sara", "Arthur", "Caleb"],
+    correct: "Arthur"
+  },
+  {
+    ask: "What is best arrow to use to get perfect pelts from large animals?",
+    answers: ["Fire", "Exploding", "Regular", "Improved"],
+    correct: "Improved"
+  },
+  {
+    ask: "Who is the boss of the gang you are in?",
+    answers: ["Dutch", "Colin", "Boss", "Felix"],
+    correct: "Dutch"
+  },
+  {
+    ask: "What hand gun do you start out with?",
+    answers: ["Cattleman Revolver", "Volcano Pistol", "Mauser", "Double-Action Revolver"],
+    correct: "Cattleman Revolver"
+  },
+  {
+    ask: "What are the creepy zombie-like hostile individuals in the bayou called?",
+    answers: ["Swimmers", "The Cursed", "The Night Folk", "Townsfolk"],
+    correct: "The Night Folk"
+  }
+];
+
+console.log(questions);
+
 var time = questions.length * 12;
+
 
 
 // hide start screen when startbtn ("shoot!" button) clicked
@@ -25,7 +57,7 @@ startBtnEl.onclick = function start() {
   questionsPageEl.removeAttribute("class", "hidden");
 
   timeID = setInterval(timeRunDown, 1000)
-  timerEl.textContent = time;
+  timeID.textContent = time;
 
 
 
@@ -40,31 +72,30 @@ function getQuestion() {
   answersEl.textContent = "";
   
   // fetch question from question array
-  var currentQuestion = allQuestions[questionIndex];
+  var currentQuestion = questions[questionIndex];
+
   askEl.textContent = currentQuestion.ask;
   
   // answers appear, forEach, loop
   currentQuestion.answers.forEach(function(answer, i) {
     var answerButton = document.createElement("button");
     answerButton.setAttribute("class", "answer");
-    answerButton.setAttribute("value", "answer");
+    answerButton.setAttribute("value", answer);
     answerButton.textContent = i + 1 + answer;
 
     // answers and events for answers
     answerButton.onclick = chooseAnswer;
     answersEl.appendChild(answerButton);
   });
-
-  // clear old stuff
-  askEl.textContent = "";
 }
 
+// function for answer - time penalty for wrong answer
 function chooseAnswer() {
-  if (this.value !== allQuestions[questionIndex].correct) {
+  if (this.value !== questions[questionIndex].correct) {
     time -=10;
 
     if (time < 0) {time=0}
-    timerEl.textContent = time;
+    timeID.textContent = time;
     resultEl.textContent = "Nope"
 
   } else {
@@ -75,17 +106,20 @@ function chooseAnswer() {
   setTimeout(function() {
     resultEl.setAttribute("class", "hidden")
   }, 1000);
+
+  // move on
+  questionIndex++;
+
+  // check for final question
+  if (questionIndex === questions.length) {
+    endQuiz();
+  } else {
+    getQuestion();
+  }
+
 }
 
-// move on
-questionIndex++;
 
-// check for final question
-if (questionIndex === questions.length) {
-  endQuiz();
-} else {
-  getQuestion();
-}
 
 function endQuiz () {
   clearInterval(timeID);
@@ -100,7 +134,7 @@ function endQuiz () {
 
 function timeRunDown () {
   time--;
-  timerEl.textContent = time;
+  timeID.textContent = time;
   if (time <=0) {endQuiz()};
 }
 

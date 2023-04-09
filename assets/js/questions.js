@@ -1,4 +1,7 @@
 // question objects array
+
+console.log("ding");
+
 var questions = [
   {
     ask: "What is the name of the main protagonist that you start playing as?",
@@ -26,3 +29,5 @@ var questions = [
     correct: "The Night Folk"
   }
 ];
+
+console.log(questions);
