@@ -9,6 +9,8 @@ var askEl = document.getElementById("ask-question");
 var answersEl = document.getElementById("answers");
 var resultEl = document.getElementById("result");
 var questionsPageEl = document.getElementById("question-page");
+var initialsEl = document.getElementById("initials");
+var submitBtnEl = document.getElementById("submit");
 
 var questionIndex = 0;
 
@@ -89,7 +91,8 @@ function getQuestion() {
   });
 }
 
-// function for answer - time penalty for wrong answer
+// function for answer, result shown, and 
+// time penalty for wrong answer
 function chooseAnswer() {
   if (this.value !== questions[questionIndex].correct) {
     time -=10;
@@ -116,10 +119,7 @@ function chooseAnswer() {
   } else {
     getQuestion();
   }
-
 }
-
-
 
 function endQuiz () {
   clearInterval(timeID);
@@ -132,12 +132,43 @@ function endQuiz () {
   questionsPageEl.setAttribute("class", "hidden");
 }
 
+// function for timer countdown
 function timeRunDown () {
   time--;
   timeID.textContent = time;
+  
+  // if user runs out of time
   if (time <=0) {endQuiz()};
 }
 
 
 
+// var restartBtn = document.getElementById("restart");
+// restartBtn.onclick = start();
+
+
+submitBtnEl.onclick = function saveScore() {
+
+  // get info from input box
+  var initials = initialsEl.value.trim();
+
+  if (initials !== "") {
+    // get saved scores.  if none, set up array.
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    // make new score object for current user
+    var newScore = {
+      score: time,
+      initials: initials
+    };
+
+    // save to local storage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    // goes to high score page
+    window.location.href = "highscore.html";
+  }
+}
 

@@ -13,7 +13,7 @@
 
 <body>
   <nav>
-    <div class="highscores" href="highscore.html">High Scores</div>
+    <div class="highscores"><a id="text-decoration" href="highscore.html">High Scores</a></div>
     <div class="timer">Time: <span id="time">0</span></div>
   </nav>
 
@@ -30,8 +30,10 @@
     </article>
 
     <article id="end-page" class="hidden">
-      <h2></h2>
-      <p></p>
+      <h2>You have reached the end!</h2>
+      <p>You scored: <span id="final-score"></span></p>
+      <p>Enter Initials: <input type="text" id="initials" max="3"/><button id="submit">Submit</button></p>
+      <button id="restart">Restart</button>
     </article>
 
 
