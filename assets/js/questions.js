@@ -1,5 +1,5 @@
 // question objects array
-var allQuestions = [
+var questions = [
   {
     ask: "What is the name of the main protagonist that you start playing as?",
     answers: ["John", "Sara", "Arthur", "Caleb"],
@@ -11,18 +11,18 @@ var allQuestions = [
     correct: "Improved"
   },
   {
-    ask: "What is the name of the main protagonist that you start playing as?",
-    answers: ["John", "Sara", "Arthur", "Caleb"],
-    correct: "Arthur"
+    ask: "Who is the boss of the gang you are in?",
+    answers: ["Dutch", "Colin", "Boss", "Felix"],
+    correct: "Dutch"
   },
   {
-    ask: "What is the name of the main protagonist that you start playing as?",
-    answers: ["John", "Sara", "Arthur", "Caleb"],
-    correct: "Arthur"
+    ask: "What hand gun do you start out with?",
+    answers: ["Cattleman Revolver", "Volcano Pistol", "Mauser", "Double-Action Revolver"],
+    correct: "Cattlean Revolver"
   },
   {
-    ask: "What is the name of the main protagonist that you start playing as?",
-    answers: ["John", "Sara", "Arthur", "Caleb"],
-    correct: "Arthur"
+    ask: "What are the creepy zombie-like hostile individuals in the bayou called?",
+    answers: ["Swimmers", "The Cursed", "The Night Folk", "Townsfolk"],
+    correct: "The Night Folk"
   }
 ];

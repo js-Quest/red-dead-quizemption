@@ -11,7 +11,7 @@ var resultEl = document.getElementById("result");
 var questionsPageEl = document.getElementById("question-page");
 
 var questionIndex = 0;
-var time = allQuestions.length * 12;
+var time = questions.length * 12;
 
 
 // hide start screen when startbtn ("shoot!" button) clicked
@@ -24,7 +24,7 @@ startBtnEl.onclick = function start() {
   // make question page appear
   questionsPageEl.removeAttribute("class", "hidden");
 
-  timerID = setInterval(timeRunDown, 1000)
+  timeID = setInterval(timeRunDown, 1000)
   timerEl.textContent = time;
 
 
@@ -37,7 +37,7 @@ startBtnEl.onclick = function start() {
 
 function getQuestion() {
   // clear old stuff
-  // answersEl.textContent = "";
+  answersEl.textContent = "";
   
   // fetch question from question array
   var currentQuestion = allQuestions[questionIndex];
@@ -55,8 +55,8 @@ function getQuestion() {
     answersEl.appendChild(answerButton);
   });
 
-  //clear old stuff
-  // askEl.textContent = "";
+  // clear old stuff
+  askEl.textContent = "";
 }
 
 function chooseAnswer() {
@@ -81,14 +81,14 @@ function chooseAnswer() {
 questionIndex++;
 
 // check for final question
-if (questionIndex === allQuestions.length) {
+if (questionIndex === questions.length) {
   endQuiz();
 } else {
   getQuestion();
 }
 
 function endQuiz () {
-  clearInterval(timerID);
+  clearInterval(timeID);
 
   // make end page appear
   var endPageEl = document.getElementById("end-page");
@@ -99,7 +99,9 @@ function endQuiz () {
 }
 
 function timeRunDown () {
-  
+  time--;
+  timerEl.textContent = time;
+  if (time <=0) {endQuiz()};
 }
 
 
