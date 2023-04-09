@@ -83,7 +83,7 @@ function getQuestion() {
     var answerButton = document.createElement("button");
     answerButton.setAttribute("class", "answer");
     answerButton.setAttribute("value", answer);
-    answerButton.textContent = i + 1 + answer;
+    answerButton.textContent = i + 1 + "." + answer;
 
     // answers and events for answers
     answerButton.onclick = chooseAnswer;
