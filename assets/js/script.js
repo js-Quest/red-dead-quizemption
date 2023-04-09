@@ -31,9 +31,9 @@ var questions = [
     correct: "Dutch"
   },
   {
-    ask: "What hand gun do you start out with?",
-    answers: ["Cattleman Revolver", "Volcano Pistol", "Mauser", "Double-Action Revolver"],
-    correct: "Cattleman Revolver"
+    ask: "What gun do you start out with?",
+    answers: ["Carbine", "Volcano Pistol", "Mauser", "Carcano Rifle"],
+    correct: "Carbine"
   },
   {
     ask: "What are the creepy zombie-like hostile individuals in the bayou called?",
