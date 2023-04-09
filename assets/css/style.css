@@ -6,15 +6,18 @@
   box-sizing: border-box;
   background-color: rgb(209, 186, 154);
   font-size: 1.1rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
   text-align: center;
   font-size: 4rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h2 {
   padding: 8% 0 10% 0;
+  font-size: 1.4rem;
 }
 
 p {
@@ -42,7 +45,7 @@ button {
   cursor: crosshair;
 }
 
-
+/* classes */
 
 .pushable {
   background: rgb(111, 35, 2);
@@ -135,7 +138,7 @@ button {
 
 
 
-
+/* IDs */
 
 #text-score {
   text-decoration: none;
@@ -144,6 +147,10 @@ button {
   font-size: 2rem;
   height: 10%;
   width: 60%;
+}
+
+#scoreboard {
+  text-transform: uppercase;
 }
 
 #result {

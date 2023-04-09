@@ -46,6 +46,9 @@ console.log(questions);
 
 var time = questions.length * 12;
 
+// testing time allotment
+console.log(time);
+var timer;
 
 
 // hide start screen when startbtn ("shoot!" button) clicked
@@ -58,7 +61,7 @@ startBtnEl.onclick = function start() {
   // make question page appear
   questionsPageEl.removeAttribute("class", "hidden");
 
-  timeID = setInterval(timeRunDown, 1000)
+  timer = setInterval(timeRunDown, 1000)
   timeID.textContent = time;
 
 
@@ -152,7 +155,7 @@ restartBtn.onclick = function restart () {
 submitBtnEl.onclick = function saveScore() {
 
   // get info from input box
-  var initials = initialsEl.value.trim();
+  var initials = initialsEl.value.trim()
 
   if (initials !== "") {
     // get saved scores.  if none, set up array.

@@ -11,7 +11,8 @@ function showHighScores () {
   // to populate scores
   highscores.forEach(function(score) {
     var tagEl = document.createElement("li");
-    tagEl.textContent = "Name: " + score.initials + " ... " + score.score + " xp";
+    tagEl.textContent = " " + score.initials + " ... " + score.score + " xp";
+    
     var olEl = document.getElementById("scoreboard");
     olEl.appendChild(tagEl);
   });
