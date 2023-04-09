@@ -9,7 +9,7 @@ This project uses HTML, CSS, and JavaScript to demonstrate use of the DOM, timer
 
 ## Installation
 
-Clone the repository, or run it directly from the deployed page:
+Clone the repository, or run it directly from the deployed page: https://js-quest.github.io/red-dead-quizemption/
 
     
 ## Usage/Examples
