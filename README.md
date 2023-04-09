@@ -2,7 +2,7 @@
 
 ## Desciption
 
-A quiz on RDR2!  If you know what that is, it's going to be an easy feat.  If not, have no fear!  This quiz is referencing Read Dead Redemption 2, an open-world role-playing-game avaiable on Xbox, PC, and Playstation. It is multiple-choice, there is a timer, and a page that tracks your scores.  The timer offers a time penalty for wrong answers.
+A quiz on RDR2!  If you know what that is, it's going to be an easy feat.  If not, have no fear!  This quiz is referencing Read Dead Redemption 2, an open-world role-playing-game available on Xbox, PC, and Playstation. It is multiple-choice, there is a timer, and a page that tracks your scores.  The timer offers a time penalty for wrong answers.
 
 This project uses HTML, CSS, and JavaScript to demonstrate use of the DOM, timer intervals, event bubbling, data attributes, and use of local storage with your API.
 
