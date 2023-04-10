@@ -49,6 +49,14 @@ var time = questions.length * 12;
 console.log(time);
 var timer;
 
+// function for timer countdown
+function timeRunDown() {
+  time--;
+  timeID.textContent = time;
+
+  // go to end-page if user runs out of time
+  if (time <= 0) { endQuiz() };
+}
 
 // hide start screen when startbtn ("shoot!" button) clicked
 startBtnEl.onclick = function start() {
@@ -60,10 +68,9 @@ startBtnEl.onclick = function start() {
   // make question page appear
   questionsPageEl.removeAttribute("class", "hidden");
 
+  // set timer to 1 second at a time, show time on page.
   timer = setInterval(timeRunDown, 1000)
   timeID.textContent = time;
-
-
 
   getQuestion();
 }
@@ -80,12 +87,13 @@ function getQuestion() {
 
   askEl.textContent = currentQuestion.ask;
   
-  // answers appear, forEach, loop
+  // answers populate on buttons, .forEach loop
   currentQuestion.answers.forEach(function(answer, i) {
     var answerButton = document.createElement("button");
     answerButton.setAttribute("class", "answer");
     answerButton.setAttribute("value", answer);
-    answerButton.textContent = i + 1 + "." + answer;
+    // i+1 to show numbers 1-4 since array starts at 0.
+    answerButton.textContent = i + 1 + ". " + answer;
 
     // answers and events for answers
     answerButton.onclick = chooseAnswer;
@@ -98,10 +106,11 @@ function getQuestion() {
 function chooseAnswer() {
   if (this.value !== questions[questionIndex].correct) {
     time -=13;
+    resultEl.textContent = "Nope";
 
+    // check for 0 time, set to <=1 or else actual 0 will show -1 seconds.
     if (time <= 1) {time=0};
     timeID.textContent = time;
-    resultEl.textContent = "Nope";
 
   } else {
     resultEl.textContent = "Right on!";
@@ -139,14 +148,6 @@ function endQuiz () {
   
 }
 
-// function for timer countdown
-function timeRunDown () {
-  time--;
-  timeID.textContent = time;
-  
-  // if user runs out of time
-  if (time <=0) {endQuiz()};
-}
 
 
 
@@ -160,7 +161,8 @@ submitBtnEl.onclick = function saveScore() {
 
   // get info from input box
   var initials = initialsEl.value.trim()
-  
+
+  // make sure intials form isn't empty
   if (initials !== "") {
     // get saved scores.  if none, set up array.
     var highscores =
