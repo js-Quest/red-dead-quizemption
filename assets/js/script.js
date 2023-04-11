@@ -87,7 +87,7 @@ function getQuestion() {
 
   askEl.textContent = currentQuestion.ask;
   
-  // answers populate on buttons, .forEach loop
+  // answers populate on buttons, .forEach
   currentQuestion.answers.forEach(function(answer, i) {
     var answerButton = document.createElement("button");
     answerButton.setAttribute("class", "answer");
@@ -115,7 +115,7 @@ function chooseAnswer() {
   } else {
     resultEl.textContent = "Right on!";
   }
-
+  // show result and then make it go away
   resultEl.setAttribute("class", "result");
   setTimeout(function() {
     resultEl.setAttribute("class", "hidden")
