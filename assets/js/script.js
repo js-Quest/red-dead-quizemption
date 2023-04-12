@@ -107,6 +107,7 @@ function chooseAnswer() {
   if (this.value !== questions[questionIndex].correct) {
     time -=13;
     resultEl.textContent = "Nope";
+    
 
     // check for 0 time, set to <=1 or else actual 0 will show -1 seconds.
     if (time <= 1) {time=0};

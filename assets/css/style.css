@@ -4,24 +4,33 @@
   font-family: Geneva, Tahoma, sans-serif;
   line-height: 2;
   box-sizing: border-box;
-  background-color: rgb(209, 186, 154);
+  /* background-color: rgb(209, 186, 154); */
   font-size: 1.1rem;
+  
   font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-image: url(../../assets/RedDeadRedemption2-RockstarGames2.webp);
 }
 
 h1 {
   text-align: center;
   font-size: 4rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
 }
 
 h2 {
   padding: 8% 0 10% 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 p {
   display: block;
+  font-size: 1.3rem;
+  color: rgb(67, 5, 5);
+  font-weight: 700;
 }
 
 li {
@@ -85,7 +94,7 @@ button {
   width: 55%;
   margin: auto;
   padding-top: 10%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .card-content {
@@ -162,3 +171,4 @@ button {
 #startbtn {
   margin: 0 auto;
 }
+
